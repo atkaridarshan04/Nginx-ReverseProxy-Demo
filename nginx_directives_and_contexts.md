@@ -88,21 +88,35 @@ Defines how Nginx should handle requests for a specific domain or IP address.
 ### **Location Block**
 - Used to define specific behaviors for certain URIs or routes.  
 
-#### **Key Directives**
-1. **`proxy_pass`**:  
-   - Configures Nginx to forward requests to another server (reverse proxy).  
-   ```nginx
-   location / {
-       proxy_pass http://nodejs_servers;
-   }
-   ```
 
-2. **`proxy_set_header`**:  
-   - Customizes headers sent to the upstream server.  
-   ```nginx
-   proxy_set_header Host $host;
-   proxy_set_header X-Real-IP $remote_addr;
-   ```
+### 1. **`proxy_pass`**
+- **Purpose**: Forwards client requests to another server (reverse proxy).
+- **Example**:
+  ```nginx
+  location / {
+      proxy_pass http://nodejs_servers;
+  }
+  ```
+- **How It Works**: Routes incoming requests to the backend servers defined in an `upstream` block.
+
+---
+
+### 2. **`proxy_set_header`**
+- **Purpose**: Customizes HTTP headers sent to the upstream server.
+- **Examples**:
+  - **`Host`**: Passes the original host header to the backend server.
+    ```nginx
+    proxy_set_header Host $host;
+    ```
+  - **`X-Real-IP`**: Passes the real client IP to the backend server.
+    ```nginx
+    proxy_set_header X-Real-IP $remote_addr;
+    ```
+
+---
+
+### How They Work Together:
+- **`proxy_pass`** forwards client requests, and **`proxy_set_header`** ensures necessary headers (like client IP or host) are passed correctly to the backend servers. This is crucial for maintaining accurate client information, logging, and security.
 
 ---
 
