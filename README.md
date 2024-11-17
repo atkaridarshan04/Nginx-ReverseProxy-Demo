@@ -91,6 +91,8 @@ This repository demonstrates how to configure **Nginx** as a reverse proxy (load
    - [https://localhost:443](https://localhost:443)  
 
    ![nginx-ssl-configured.png](./images/nginx-ssl-configured.png)  
+   ![ssl-certificate.png](./images/ssl-certificate.png)  
+
 
    **Note:** As this is a self-signed SSL certificate, your browser may show a "not secure" warning. In production, use a valid SSL certificate to avoid warnings.
 
