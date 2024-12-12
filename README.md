@@ -58,12 +58,7 @@ This repository demonstrates how to configure **Nginx** as a reverse proxy (load
    sudo rm /etc/nginx/nginx.conf
    ```
 
-2. **Edit the Nginx configuration file:**  
-   ```bash
-   sudo vi /etc/nginx/nginx.conf
-   ```
-
-3. **Generate SSL certificates:**  
+2. **Generate SSL certificates:**  
    Create a directory for Nginx certificates and generate a self-signed SSL certificate.  
    ```bash
    mkdir ~/nginx-certs
@@ -78,7 +73,10 @@ This repository demonstrates how to configure **Nginx** as a reverse proxy (load
    **Note:** Adjust the certificate file paths in the Nginx configuration file ([nginx.conf](nginx.conf)) as per your setup.
 
 4. **Paste the Nginx configuration file contents:**  
-   Replace the contents of `/etc/nginx/nginx.conf` with the provided [`nginx.conf`](./nginx.conf) file.
+   ```bash
+   sudo vi /etc/nginx/nginx/conf
+   ```
+   Place the content form [`nginx.conf`](./nginx.conf) file in `/etc/nginx/nginx/conf`
 
 5. **Restart Nginx to apply the configuration:**  
    ```bash
@@ -87,14 +85,14 @@ This repository demonstrates how to configure **Nginx** as a reverse proxy (load
    ```
 
 6. **Access the reverse proxy:**  
-   - [http://localhost:8080](http://localhost:8080)  
+   - [http://localhost:80](http://localhost:80)  
    - [https://localhost:443](https://localhost:443)  
 
    ![nginx-ssl-configured.png](./images/nginx-ssl-configured.png)  
    ![ssl-certificate.png](./images/ssl-certificate.png)  
 
 
-   **Note:** As this is a self-signed SSL certificate, your browser may show a "not secure" warning. In production, use a valid SSL certificate to avoid warnings.
+   **Note:** As this is a self-signed SSL certificate, your browser may show a "not secure" warning.
 
 ---
 
@@ -121,6 +119,6 @@ nginx -s stop
   sudo vi /var/www/html/index.nginx-debian.html
   ```
 
-- Ensure that the self-signed certificates are used only in testing or development environments. In production, always use valid SSL certificates from trusted certificate authorities.
+- Ensure that the self-signed certificates are used only in testing or development environments.
 
 ---
