@@ -116,7 +116,7 @@ nginx -s stop
 
 - To edit the default Nginx index page:  
   ```bash
-  sudo vi /var/www/html/index.nginx-debian.html
+  sudo vi /var/www/html/index.html
   ```
 
 - Ensure that the self-signed certificates are used only in testing or development environments.
