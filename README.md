@@ -74,9 +74,9 @@ This repository demonstrates how to configure **Nginx** as a reverse proxy (load
 
 4. **Paste the Nginx configuration file contents:**  
    ```bash
-   sudo vi /etc/nginx/nginx/conf
+   sudo vi /etc/nginx/nginx.conf
    ```
-   Place the content form [`nginx.conf`](./nginx.conf) file in `/etc/nginx/nginx/conf`
+   Place the content form [`nginx.conf`](./nginx.conf) file in `/etc/nginx/nginx.conf`
 
 5. **Restart Nginx to apply the configuration:**  
    ```bash
